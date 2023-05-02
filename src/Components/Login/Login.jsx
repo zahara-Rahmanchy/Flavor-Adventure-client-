@@ -17,7 +17,7 @@ const Login = () => {
       setError("Password should be at least 6 characters long");
       return;
     }
-    console.log(email, password);
+    // console.log(email, password);
     logIn(email, password)
       .then(userCredential => {
         console.log(userCredential.user);

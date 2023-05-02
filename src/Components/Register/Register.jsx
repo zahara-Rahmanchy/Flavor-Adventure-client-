@@ -25,7 +25,7 @@ const Register = () => {
       setError("Password doesn't match");
     }
     createUser(email, password)
-      .then(() => {
+      .then(result => {
         const createdUser = result.user;
         alert("Registerd Successfully");
         console.log(createdUser);
