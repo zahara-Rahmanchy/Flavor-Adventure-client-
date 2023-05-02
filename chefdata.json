@@ -1,0 +1,236 @@
+[
+  {
+    "chef_picture": "https://example.com/chef1.png",
+    "chef_name": "Juan Rodriguez",
+    "years_of_experience": 15,
+    "num_of_recipes": 80,
+    "likes": 2000,
+
+    "cuisine": "Mexican",
+    "chef_id": "10001",
+    "recipes": [
+      {
+        "recipe_name": "Tacos al Pastor",
+        "ingredients": [
+          "pork shoulder",
+          "pineapple",
+          "onion",
+          "cilantro",
+          "corn tortillas"
+        ],
+        "cooking_method": "Grill the pork and pineapple, sauté the onions, chop the cilantro, and assemble the tacos with the tortillas",
+        "rating": 4.5
+      },
+      {
+        "recipe_name": "Enchiladas Verdes",
+        "ingredients": [
+          "chicken breast",
+          "tortillas",
+          "tomatillos",
+          "onion",
+          "queso fresco"
+        ],
+        "cooking_method": "Cook the chicken, blend the tomatillos and onions into a sauce, fill the tortillas with the chicken and cheese, pour the sauce on top and bake",
+        "rating": 4.8
+      },
+      {
+        "recipe_name": "Chiles Rellenos",
+        "ingredients": [
+          "poblano peppers",
+          "ground beef",
+          "rice",
+          "tomato sauce",
+          "mozzarella cheese"
+        ],
+        "cooking_method": "Roast the peppers, stuff them with the beef and rice, coat with tomato sauce and cheese, and bake until the cheese is melted",
+        "rating": 4.3
+      }
+    ]
+  },
+  {
+    "chef_picture": "https://example.com/chef2.png",
+    "chef_name": "Elena Ramirez",
+    "years_of_experience": 12,
+    "num_of_recipes": 60,
+    "likes": 1500,
+
+    "cuisine": "Mexican",
+    "chef_id": "10002",
+    "recipes": [
+      {
+        "recipe_name": "Guacamole",
+        "ingredients": ["avocado", "lime", "tomato", "onion", "jalapeño"],
+        "cooking_method": "Mash the avocado, add the lime juice, diced tomato, chopped onion and jalapeño, mix well and serve with tortilla chips",
+        "rating": 4.7
+      },
+      {
+        "recipe_name": "Ceviche",
+        "ingredients": ["shrimp", "lime", "onion", "tomato", "cilantro"],
+        "cooking_method": "Cook the shrimp, chop them into small pieces, add lime juice, diced onion, tomato and cilantro, mix well and chill for at least 30 minutes",
+        "rating": 4.9
+      },
+      {
+        "recipe_name": "Mole Poblano",
+        "ingredients": [
+          "chicken thighs",
+          "dried chiles",
+          "nuts",
+          "spices",
+          "chocolate"
+        ],
+        "cooking_method": "Toast the chiles and nuts, blend them with spices and chocolate, and simmer the sauce with cooked chicken until it thickens",
+        "rating": 4.6
+      }
+    ]
+  },
+  {
+    "chef_picture": "https://example.com/chef3.png",
+    "chef_name": "Luis Torres",
+    "years_of_experience": 8,
+    "num_of_recipes": 40,
+    "likes": 1200,
+
+    "cuisine": "Mexican",
+    "chef_id": "10003",
+    "recipes": [
+      {
+        "recipe_name": "Pico de Gallo",
+        "ingredients": ["tomato", "onion", "jalapeño", "cilantro", "lime"],
+        "cooking_method": "Dice the tomato, onion and jalapeño, chop the cilantro, mix well with lime juice and serve as a salsa or topping",
+        "rating": 4.4
+      },
+      {
+        "recipe_name": "Tamales",
+        "ingredients": ["corn masa", "pork", "salsa", "corn husks", "water"],
+        "cooking_method": "Soak the corn husks, spread the masa, add the pork and salsa, fold and steam the tamales until cooked",
+        "rating": 4.7
+      },
+      {
+        "recipe_name": "Churros",
+        "ingredients": ["flour", "sugar", "cinnamon", "water", "oil"],
+        "cooking_method": "Mix the flour, sugar, cinnamon and water into a dough, pipe it into hot oil, fry until golden brown and coat with cinnamon sugar",
+        "rating": 4.5
+      }
+    ]
+  },
+  {
+    "chef_picture": "https://example.com/chef4.png",
+    "chef_name": "Ana Hernandez",
+    "years_of_experience": 20,
+    "num_of_recipes": 100,
+    "likes": 2500,
+
+    "cuisine": "Mexican",
+    "chef_id": "10004",
+    "recipes": [
+      {
+        "recipe_name": "Sopa de Fideo",
+        "ingredients": [
+          "vermicelli",
+          "tomato",
+          "onion",
+          "garlic",
+          "chicken broth"
+        ],
+        "cooking_method": "Fry the vermicelli, blend the tomato, onion and garlic into a sauce, add the broth and sauce to the vermicelli and simmer until cooked",
+        "rating": 4.6
+      },
+      {
+        "recipe_name": "Cochinita Pibil",
+        "ingredients": [
+          "pork shoulder",
+          "achiote paste",
+          "orange juice",
+          "lime juice",
+          "banana leaves"
+        ],
+        "cooking_method": "Marinate the pork in achiote paste, orange juice and lime juice, wrap it in banana leaves and bake until tender",
+        "rating": 4.9
+      },
+      {
+        "recipe_name": "Tres Leches Cake",
+        "ingredients": ["flour", "sugar", "eggs", "baking powder", "milk"],
+        "cooking_method": "Mix the flour, sugar, eggs and baking powder, bake the cake, soak it in a mixture of milk, condensed milk and evaporated milk, and top with whipped cream",
+        "rating": 4.8
+      }
+    ]
+  },
+  {
+    "chef_picture": "https://example.com/chef5.png",
+    "chef_name": "Miguel Rodriguez",
+    "years_of_experience": 12,
+    "num_of_recipes": 60,
+    "likes": 1800,
+
+    "cuisine": "Mexican",
+    "chef_id": "10005",
+    "recipes": [
+      {
+        "recipe_name": "Chiles Rellenos",
+        "ingredients": [
+          "poblano peppers",
+          "ground beef",
+          "tomato sauce",
+          "cheese",
+          "egg"
+        ],
+        "cooking_method": "Roast and peel the peppers, stuff them with cooked beef and cheese, coat them in egg batter and fry until golden brown, top with tomato sauce",
+        "rating": 4.7
+      },
+      {
+        "recipe_name": "Carne Asada",
+        "ingredients": ["skirt steak", "lime juice", "garlic", "cumin", "salt"],
+        "cooking_method": "Marinate the steak in lime juice, garlic, cumin and salt, grill it to desired doneness, and slice thinly for serving",
+        "rating": 4.9
+      },
+      {
+        "recipe_name": "Enchiladas Verdes",
+        "ingredients": [
+          "corn tortillas",
+          "chicken",
+          "tomatillo sauce",
+          "cheese",
+          "sour cream"
+        ],
+        "cooking_method": "Heat the tortillas, fill them with cooked chicken and cheese, roll them up and top with tomatillo sauce and sour cream",
+        "rating": 4.6
+      }
+    ]
+  },
+  {
+    "chef_picture": "https://example.com/chef6.png",
+    "chef_name": "Rosa Martinez",
+    "years_of_experience": 15,
+    "num_of_recipes": 80,
+    "likes": 2000,
+
+    "cuisine": "Mexican",
+    "chef_id": "10006",
+    "recipes": [
+      {
+        "recipe_name": "Guacamole",
+        "ingredients": ["avocado", "tomato", "onion", "jalapeño", "lime"],
+        "cooking_method": "Mash the avocado, dice the tomato, onion and jalapeño, mix well with lime juice and salt and serve as a dip or topping",
+        "rating": 4.5
+      },
+      {
+        "recipe_name": "Pozole",
+        "ingredients": [
+          "pork shoulder",
+          "hominy",
+          "onion",
+          "garlic",
+          "chili peppers"
+        ],
+        "cooking_method": "Simmer the pork and hominy with onion, garlic and chili peppers until the pork is tender, serve hot with garnishes such as cabbage, radish, and lime",
+        "rating": 4.8
+      },
+      {
+        "recipe_name": "Tamales",
+        "ingredients": ["corn husks", "masa", "pork", "chili powder", "cumin"],
+        "cooking_method": "Soak the corn husks, mix the masa with water and spices, spread it on the husks, add cooked pork, wrap the husks tightly and steam until done",
+        "rating": 4.7
+      }
+    ]
+  }
+]
