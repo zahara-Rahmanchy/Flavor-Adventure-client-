@@ -27,37 +27,43 @@ const Header = () => {
         </div>
 
         <Navbar bg="bg-light" color="white" expand="lg">
-          <Container fluid style={{backgroundColor: "#f9f6f6"}} className="p-2">
+          <Container fluid style={{backgroundColor: "#f4eded"}} className="p-2">
             <Navbar.Toggle aria-controls="navbarScroll" />
 
-            <Navbar.Collapse id="navbarScroll">
+            <Navbar.Collapse
+              id="navbarScroll"
+              style={{backgroundColor: "#f4eded"}}
+            >
               <Nav
                 className="mx-auto my-2 my-lg-0 text-decoration-none px-3"
-                style={{maxHeight: "100px"}}
+                style={{maxHeight: "100px", backgroundColor: "#f4eded"}}
                 navbarScroll
               >
-                <Link to="/" className="text-decoration-none me-3 text-black">
+                <Link
+                  to="/"
+                  className="text-decoration-none me-5 text-black fs-6 fw-semibold bg-transparent"
+                >
                   Home
                 </Link>
                 <Link
                   to="/blog"
-                  className="text-decoration-none me-3 text-black"
+                  className="text-decoration-none me-5 fs-6 fw-semibold text-dark bg-transparent"
                 >
                   Blog
                 </Link>
                 <Link
                   to="/login"
-                  className="text-decoration-none me-3 text-black"
+                  className="text-decoration-none me-5 fs-6 fw-semibold text-black bg-transparent"
                 >
                   Login
                 </Link>
                 <Link
                   to="/register"
-                  className="text-decoration-none me-3 text-black"
+                  className="text-decoration-none me-5 fs-6 fw-semibold text-black bg-transparent"
                 >
                   Register
                 </Link>
-                <Link className="text-decoration-none me-3 text-black">
+                <Link className="text-decoration-none me-5 fs-6 fw-semibold text-black bg-transparent">
                   UserProfile
                 </Link>
               </Nav>
