@@ -4,13 +4,14 @@ import {initializeApp} from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+console.log(import.meta.env.VITE_apiKey);
 const firebaseConfig = {
-  apiKey: "AIzaSyAxQcUiX_IH37uVZIXbcLaSXCCcMjvn5rI",
-  authDomain: "flavor-adventure-client-side.firebaseapp.com",
-  projectId: "flavor-adventure-client-side",
-  storageBucket: "flavor-adventure-client-side.appspot.com",
-  messagingSenderId: "544686605001",
-  appId: "1:544686605001:web:8bc8c38d58d0ae812ec318",
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId,
 };
 
 // Initialize Firebase
