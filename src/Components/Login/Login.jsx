@@ -1,12 +1,16 @@
 import React, {useContext, useState} from "react";
-import {Link} from "react-router-dom";
+import {Link, useNavigate, useLocation} from "react-router-dom";
 import {Container, Button, Form} from "react-bootstrap";
 import {AuthContext} from "../../Providers/AuthProvider";
 
 const Login = () => {
   const {logIn, logInWithGoogle} = useContext(AuthContext);
-
   const [error, setError] = useState("");
+  const navigate = useNavigate();
+  const location = useLocation();
+  console.log("login loc", location);
+
+  const fromCurrentLocation = location.state?.from?.pathname || "/";
 
   const handleLogin = e => {
     e.preventDefault();
@@ -21,6 +25,8 @@ const Login = () => {
     logIn(email, password)
       .then(userCredential => {
         console.log(userCredential.user);
+
+        navigate(fromCurrentLocation, {replace: true});
       })
       .catch(error => {
         console.log(error.message);
@@ -34,6 +40,7 @@ const Login = () => {
         const loggedInUser = result.user;
 
         console.log(loggedInUser);
+        navigate(fromCurrentLocation, {replace: true});
       })
       .catch(error => {
         console.log("error", error.message);
@@ -41,7 +48,7 @@ const Login = () => {
   };
   return (
     <>
-      <Container className="w-50 mx-auto my-4 p-3">
+      <Container className="w-50 w-100 mx-auto my-4 p-3" fluid="md">
         <Form
           className="w-50 mx-auto p-4 rounded-2 bg-danger bg-opacity-10"
           onSubmit={handleLogin}

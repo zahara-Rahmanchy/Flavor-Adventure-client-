@@ -43,7 +43,7 @@ const Header = () => {
               style={{backgroundColor: "#f4eded"}}
             >
               <Nav
-                className="mx-auto  my-lg-0 text-decoration-none px-3"
+                className="mx-auto  my-lg-0 text-decoration-none px-3 d-flex"
                 style={{maxHeight: "100px", backgroundColor: "#f4eded"}}
                 navbarScroll
               >
@@ -55,32 +55,44 @@ const Header = () => {
                 </Link>
                 <Link
                   to="/blog"
-                  className="text-decoration-none me-5 fs-6 fw-semibold text-dark bg-transparent"
+                  className="text-decoration-none m-0 fs-6 fw-semibold text-dark bg-transparent flex-grow-1"
                 >
                   Blog
                 </Link>
-                <Link
-                  to="/login"
-                  className="text-decoration-none me-5 fs-6 fw-semibold text-black bg-transparent"
-                >
-                  Login
-                </Link>
-                <Link
-                  to="/register"
-                  className="text-decoration-none me-5 fs-6 fw-semibold text-black bg-transparent"
-                >
-                  Register
-                </Link>
 
-                {user && (
+                {!user && (
                   <>
-                    <Link className="text-decoration-none me-5 fs-6 fw-semibold text-black bg-transparent">
-                      UserProfile
+                    {" "}
+                    <Link
+                      to="/login"
+                      className="text-decoration-none ms-md-5 me-5 fs-6 fw-semibold text-black bg-transparent"
+                    >
+                      Login
                     </Link>
-                    <Button onClick={handleLogOut}>Sign Out</Button>
+                    <Link
+                      to="/register"
+                      className="text-decoration-none me-5 fs-6 fw-semibold text-black bg-transparent"
+                    >
+                      Register
+                    </Link>
                   </>
                 )}
               </Nav>
+              <div className="d-flex align-items-center">
+                {user && (
+                  <>
+                    <Link className="text-decoration-none me-2 fs-6 fw-semibold text-black bg-transparent">
+                      UserProfile
+                    </Link>
+                    <Button
+                      onClick={handleLogOut}
+                      className="rounded-pill  bg-danger border-0"
+                    >
+                      Sign Out
+                    </Button>
+                  </>
+                )}
+              </div>
             </Navbar.Collapse>
           </Container>
         </Navbar>

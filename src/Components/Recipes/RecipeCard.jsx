@@ -92,7 +92,7 @@ const RecipeCard = props => {
         />
         ;
       </Col>
-      <Col>
+      <Col sm={6}>
         <Card className="bg-transparent border-0"></Card>
         {recipe_image && (
           <Card.Img

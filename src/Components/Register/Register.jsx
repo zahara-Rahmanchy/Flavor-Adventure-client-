@@ -37,9 +37,9 @@ const Register = () => {
   };
   return (
     <>
-      <Container className="w-50 mx-auto my-4 p-3 rounded">
+      <div className="w-50 mx-auto my-4 p-3 rounded">
         <Form
-          className="w-50 mx-auto p-4 bg-danger bg-opacity-10 rounded-2"
+          className="w-75  mx-auto p-4 bg-danger bg-opacity-10 rounded-2"
           onSubmit={handleRegister}
         >
           <h5 className="text-center bg-transparent m-2 fst-italic text-danger">
@@ -110,7 +110,7 @@ const Register = () => {
             </Link>
           </Form.Text>
         </Form>
-      </Container>
+      </div>
     </>
   );
 };
