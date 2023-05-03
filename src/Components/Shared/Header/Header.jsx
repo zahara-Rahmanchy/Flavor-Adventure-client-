@@ -47,7 +47,7 @@ const Header = () => {
               style={{backgroundColor: "#f4eded"}}
             >
               <Nav
-                className="mx-auto  my-lg-0 text-decoration-none px-3 d-flex"
+                className="mx-auto mt-2 my-3 my-md-0 text-decoration-none px-3 d-flex"
                 style={{maxHeight: "100px", backgroundColor: "#f4eded"}}
                 navbarScroll
               >
@@ -66,28 +66,21 @@ const Header = () => {
 
                 {!user && (
                   <>
-                    {" "}
-                    <Link
-                      to="/login"
-                      className="text-decoration-none ms-md-5 me-5 fs-6 fw-semibold text-black bg-transparent"
-                    >
-                      Login
-                    </Link>
                     <Link
                       to="/register"
-                      className="text-decoration-none me-5 fs-6 fw-semibold text-black bg-transparent"
+                      className="text-decoration-none ms-md-5 me-5 fs-6 fw-semibold text-black bg-transparent"
                     >
                       Register
                     </Link>
                   </>
                 )}
               </Nav>
-              <div className="d-flex align-items-center">
-                {user && (
+              <div className="d-flex align-items-md-center flex-column flex-md-row w-md-50">
+                {user ? (
                   <>
                     <img
                       src={user.photoURL}
-                      className="my-anchor-element rounded-circle text-decoration-none me-2 fs-6 fw-semibold text-black bg-transparent"
+                      className="my-anchor-element rounded-circle text-decoration-none me-2 ms-md-1 ms-2 fs-6 fw-semibold text-black bg-transparent my-md-0 mb-2"
                       style={{width: "40px", height: "40px"}}
                     />
                     <Tooltip anchorSelect=".my-anchor-element" place="top">
@@ -96,11 +89,20 @@ const Header = () => {
 
                     <Button
                       onClick={handleLogOut}
-                      className="rounded-pill  bg-danger border-0"
+                      className="rounded-pill bg-danger border-0 w-sm-25 w-100"
                     >
                       Sign Out
                     </Button>
                   </>
+                ) : (
+                  <Link
+                    to="/login"
+                    className="text-decoration-none ms-md-5  fs-6 fw-semibold text-black bg-transparent"
+                  >
+                    <Button className="rounded-pill bg-danger border-0">
+                      Login
+                    </Button>
+                  </Link>
                 )}
               </div>
             </Navbar.Collapse>

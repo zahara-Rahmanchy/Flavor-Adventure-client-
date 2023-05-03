@@ -1,5 +1,5 @@
 import React, {useContext, useState} from "react";
-import {Link, Navigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import {Container, Button} from "react-bootstrap";
 import {AuthContext} from "../../Providers/AuthProvider";
@@ -7,6 +7,7 @@ import {updateProfile} from "firebase/auth";
 
 const Register = () => {
   const {user, createUser} = useContext(AuthContext);
+  const navigate = useNavigate();
   const [error, setError] = useState("");
   const handleRegister = e => {
     e.preventDefault();
@@ -19,7 +20,7 @@ const Register = () => {
 
     console.log(name, email, password, conPassword, photo);
 
-    if (!/^[a-z 0-1]+@(gmail|yahoo).com$/.test(email)) {
+    if (!/^[a-z 0-9]+@(gmail|yahoo).com$/.test(email)) {
       setError("Invalid Email");
       return;
     }
@@ -37,9 +38,9 @@ const Register = () => {
       .then(result => {
         const createdUser = result.user;
 
-        alert("Registerd Successfully");
+        // alert("Registerd Successfully");
         update(createdUser, name, photo);
-        <Navigate to="/login"></Navigate>;
+        navigate("/login", {replace: true});
       })
       .catch(error => {
         // console.log(error);

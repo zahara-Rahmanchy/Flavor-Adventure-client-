@@ -1,0 +1,16 @@
+/* .carousal-inner {
+  width: 100% !important;
+  height: 100px !important;
+} */
+
+.c-item {
+  height: 400px;
+}
+
+.c-img {
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.6);
+  /* filter: opacity(25%); */
+  z-index: 0;
+}

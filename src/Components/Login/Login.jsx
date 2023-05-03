@@ -22,7 +22,7 @@ const Login = () => {
       return;
     } else if (!/^?=.*[0-9]$/) {
       setError("Password should contain at least one number");
-    } else if (!/^[a-z 0-1]+@(gmail|yahoo).com$/.test(email)) {
+    } else if (!/^[a-z 0-9]+@(gmail|yahoo).com$/.test(email)) {
       setError("Invalid Email");
       return;
     }
