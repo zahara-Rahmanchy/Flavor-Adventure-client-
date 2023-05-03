@@ -1,8 +1,9 @@
 import React, {useContext, useState} from "react";
-import {Link} from "react-router-dom";
+import {Link, Navigate} from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import {Container, Button} from "react-bootstrap";
 import {AuthContext} from "../../Providers/AuthProvider";
+import {updateProfile} from "firebase/auth";
 
 const Register = () => {
   const {user, createUser} = useContext(AuthContext);
@@ -27,13 +28,24 @@ const Register = () => {
     createUser(email, password)
       .then(result => {
         const createdUser = result.user;
+
         alert("Registerd Successfully");
-        console.log(createdUser);
+        update(createdUser, name, photo);
+        <Navigate to="/login"></Navigate>;
       })
       .catch(error => {
         // console.log(error);
         setError(error.message);
       });
+
+    const update = (user, name, photo) => {
+      updateProfile(user, {
+        displayName: name,
+        photoURL: photo,
+      })
+        .then(() => console.log("updated"))
+        .catch(error => setError(error.message));
+    };
   };
   return (
     <>
@@ -65,7 +77,7 @@ const Register = () => {
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Photo URL</Form.Label>
             <Form.Control
-              type="text"
+              type="text-area"
               name="photo"
               placeholder="Photo URL"
               required

@@ -5,6 +5,7 @@ import {AuthContext} from "../../../Providers/AuthProvider";
 // import "../../../index.css";
 const Header = () => {
   const {user, logOut} = useContext(AuthContext);
+  console.log("header", user);
   const handleLogOut = () => {
     logOut()
       .then(() => alert("logged out!"))
@@ -81,9 +82,11 @@ const Header = () => {
               <div className="d-flex align-items-center">
                 {user && (
                   <>
-                    <Link className="text-decoration-none me-2 fs-6 fw-semibold text-black bg-transparent">
-                      UserProfile
-                    </Link>
+                    <img
+                      src={user.photoURL}
+                      className="rounded-circle text-decoration-none me-2 fs-6 fw-semibold text-black bg-transparent"
+                      style={{width: "40px", height: "40px"}}
+                    />
                     <Button
                       onClick={handleLogOut}
                       className="rounded-pill  bg-danger border-0"
