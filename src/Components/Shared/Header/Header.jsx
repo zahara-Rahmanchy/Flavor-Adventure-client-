@@ -1,8 +1,15 @@
-import React from "react";
+import React, {useContext} from "react";
 import {Container, Button, Navbar, Nav, Form} from "react-bootstrap";
 import {Link} from "react-router-dom";
+import {AuthContext} from "../../../Providers/AuthProvider";
 // import "../../../index.css";
 const Header = () => {
+  const {user, logOut} = useContext(AuthContext);
+  const handleLogOut = () => {
+    logOut()
+      .then(() => alert("logged out!"))
+      .catch(error => console.log(error.message));
+  };
   return (
     <>
       <Container className="mt-5 p-3">
@@ -64,9 +71,15 @@ const Header = () => {
                 >
                   Register
                 </Link>
-                <Link className="text-decoration-none me-5 fs-6 fw-semibold text-black bg-transparent">
-                  UserProfile
-                </Link>
+
+                {user && (
+                  <>
+                    <Link className="text-decoration-none me-5 fs-6 fw-semibold text-black bg-transparent">
+                      UserProfile
+                    </Link>
+                    <Button onClick={handleLogOut}>Sign Out</Button>
+                  </>
+                )}
               </Nav>
             </Navbar.Collapse>
           </Container>

@@ -2,7 +2,10 @@ import React, {useState} from "react";
 import {Col, Container, Row, Button, Card, Table} from "react-bootstrap";
 import {BsSuitHeartFill} from "react-icons/bs";
 import {ToastContainer, toast} from "react-toastify";
+import {Rating} from "@smastrom/react-rating";
+import "@smastrom/react-rating/style.css";
 import "react-toastify/dist/ReactToastify.css";
+
 const RecipeCard = props => {
   const {ingredients, cooking_method, recipe_image, rating, recipe_name} =
     props.recipe;
@@ -54,7 +57,15 @@ const RecipeCard = props => {
                 Ratings
               </th>
               <td colSpan={6} style={{background: "#FF7B74", color: "white"}}>
-                {rating}
+                <div className="d-flex align-items-center justify-content center">
+                  <Rating
+                    style={{maxWidth: 200}}
+                    value={rating}
+                    readOnly
+                    className="flex-grow-1"
+                  />
+                  {rating} stars
+                </div>
               </td>
             </tr>
           </tbody>
