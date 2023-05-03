@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {Container, Button, Form, Row, Col, Card} from "react-bootstrap";
 import {AiTwotoneLike} from "react-icons/ai";
+import {Link} from "react-router-dom";
 const Home = () => {
   const [chefs, setChefs] = useState([]);
 
@@ -21,31 +22,42 @@ const Home = () => {
         <Col sm={8}>
           <h4 className="text-center fst-italic">Our Chefs</h4>
           {chefs.map(d => (
-            <Card className="my-3 w-75 mx-auto rounded-3 p-3">
+            <Card className="my-3 w-75 mx-auto rounded-4 p-3">
               <img src={d.chef_picture} className="rounded-3 mb-3" />
-              <Card.Body>
-                <Card.Title>{d.chef_name}</Card.Title>
-                <Card.Text className="d-md-flex">
-                  <p className="text-black fs-6 flex-md-grow-1">
+              <Card.Body
+                style={{backgroundColor: "#e8cccc"}}
+                className="rounded-1"
+              >
+                <Card.Title className="bg-transparent ">
+                  {d.chef_name}
+                </Card.Title>
+                <Card.Text className="d-md-flex bg-transparent">
+                  <p className="text-black fs-6 flex-md-grow-1 bg-transparent">
                     Years of Experience:
-                    <span className="ps-2 text-danger">
+                    <span className="ps-2 text-danger bg-transparent">
                       {d.years_of_experience} years
                     </span>
                   </p>
-                  <p className="text-black fs-6">
+                  <p className="text-black fs-6 bg-transparent">
                     Number of Recipes:{" "}
-                    <span className="text-danger">
+                    <span className="text-danger bg-transparent">
                       {d.num_of_recipes} dishes{" "}
                     </span>
                   </p>
                 </Card.Text>
-                <div className="d-flex justify-content-between align-items-md-center flex-column-reverse flex-md-row">
-                  <Button style={{backgroundColor: "#e35640", border: "none"}}>
-                    View Recipes
-                  </Button>
-                  <p className="text-center">
-                    <AiTwotoneLike className="text-primary fs-5 mx-1 text-center" />
-                    <small className="text-secondary">{d.likes} Likes</small>
+                <div className="bg-transparent d-flex justify-content-between align-items-md-center flex-column-reverse flex-md-row">
+                  <Link to={`/chefs/${d.chef_id}`}>
+                    <Button
+                      style={{backgroundColor: "#e35640", border: "none"}}
+                    >
+                      View Recipes
+                    </Button>
+                  </Link>
+                  <p className="text-center bg-transparent">
+                    <AiTwotoneLike className="text-primary fs-5 mx-1 text-center bg-transparent" />
+                    <small className="text-black-50 fw-semibold bg-transparent">
+                      {d.likes} Likes
+                    </small>
                   </p>
                 </div>
               </Card.Body>
@@ -60,3 +72,9 @@ const Home = () => {
 };
 
 export default Home;
+
+{
+  /* <Link to={`/chefs/${chef_id }`}><Button style={{backgroundColor: "#e35640", border: "none"}}>
+                    View Recipes
+                  </Button></Link> */
+}
