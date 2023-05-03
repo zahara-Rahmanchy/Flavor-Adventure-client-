@@ -2,6 +2,9 @@ import React, {useContext} from "react";
 import {Container, Button, Navbar, Nav, Form} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import {AuthContext} from "../../../Providers/AuthProvider";
+import "react-tooltip/dist/react-tooltip.css";
+
+import {Tooltip} from "react-tooltip";
 // import "../../../index.css";
 const Header = () => {
   const {user, logOut} = useContext(AuthContext);
@@ -84,9 +87,13 @@ const Header = () => {
                   <>
                     <img
                       src={user.photoURL}
-                      className="rounded-circle text-decoration-none me-2 fs-6 fw-semibold text-black bg-transparent"
+                      className="my-anchor-element rounded-circle text-decoration-none me-2 fs-6 fw-semibold text-black bg-transparent"
                       style={{width: "40px", height: "40px"}}
                     />
+                    <Tooltip anchorSelect=".my-anchor-element" place="top">
+                      {user.displayName ? user.displayName : ""}
+                    </Tooltip>
+
                     <Button
                       onClick={handleLogOut}
                       className="rounded-pill  bg-danger border-0"
