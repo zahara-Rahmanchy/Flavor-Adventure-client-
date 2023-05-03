@@ -36,7 +36,7 @@ const Header = () => {
               style={{backgroundColor: "#f4eded"}}
             >
               <Nav
-                className="mx-auto my-2 my-lg-0 text-decoration-none px-3"
+                className="mx-auto  my-lg-0 text-decoration-none px-3"
                 style={{maxHeight: "100px", backgroundColor: "#f4eded"}}
                 navbarScroll
               >
