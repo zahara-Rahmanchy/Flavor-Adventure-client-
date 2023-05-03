@@ -19,11 +19,19 @@ const Register = () => {
 
     console.log(name, email, password, conPassword, photo);
 
+    if (!/^[a-z 0-1]+@(gmail|yahoo).com$/.test(email)) {
+      setError("Invalid Email");
+      return;
+    }
     if (password.length < 6) {
       setError("Password should be at least 6 characters long");
       return;
     } else if (password != conPassword) {
       setError("Password doesn't match");
+      return;
+    } else if (!/^?=.*[0-9]$/) {
+      setError("Password should contain at least one number");
+      return;
     }
     createUser(email, password)
       .then(result => {

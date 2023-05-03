@@ -4,7 +4,7 @@ import {Container, Button, Form} from "react-bootstrap";
 import {AuthContext} from "../../Providers/AuthProvider";
 
 const Login = () => {
-  const {logIn, logInWithGoogle} = useContext(AuthContext);
+  const {logIn, logInWithGoogle, user} = useContext(AuthContext);
   const [error, setError] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
@@ -19,6 +19,11 @@ const Login = () => {
     const password = e.target.password.value;
     if (password.length < 6) {
       setError("Password should be at least 6 characters long");
+      return;
+    } else if (!/^?=.*[0-9]$/) {
+      setError("Password should contain at least one number");
+    } else if (!/^[a-z 0-1]+@(gmail|yahoo).com$/.test(email)) {
+      setError("Invalid Email");
       return;
     }
     // console.log(email, password);
@@ -40,6 +45,7 @@ const Login = () => {
         const loggedInUser = result.user;
 
         console.log(loggedInUser);
+
         navigate(fromCurrentLocation, {replace: true});
       })
       .catch(error => {

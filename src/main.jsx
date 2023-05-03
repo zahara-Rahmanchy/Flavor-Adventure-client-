@@ -11,10 +11,12 @@ import Blog from "./Components/Blog";
 import AuthProvider from "./Providers/AuthProvider";
 import Recipes from "./Components/Recipes/Recipes";
 import PrivateRoute from "./Providers/PrivateRoute";
+import ErrorPage from "./Components/ErrorPage";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
