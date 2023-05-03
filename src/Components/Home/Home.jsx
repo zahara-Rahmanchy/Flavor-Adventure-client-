@@ -22,7 +22,7 @@ const Home = () => {
         <Col sm={8}>
           <h4 className="text-center fst-italic">Our Chefs</h4>
           {chefs.map(d => (
-            <Card className="my-3 w-75 mx-auto rounded-4 p-3">
+            <Card className="my-3 w-75 mx-auto rounded-4 p-3" key={d.chef_id}>
               <img src={d.chef_picture} className="rounded-3 mb-3" />
               <Card.Body
                 style={{backgroundColor: "#e8cccc"}}

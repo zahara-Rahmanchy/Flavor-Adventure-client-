@@ -1,8 +1,9 @@
 import React from "react";
-import {Col, Container, Row, Image, Card} from "react-bootstrap";
+import {Col, Container, Row, Image, Card, Table} from "react-bootstrap";
 import {useLoaderData} from "react-router-dom";
 import {AiTwotoneLike} from "react-icons/ai";
 import "../../index.css";
+import RecipeCard from "./RecipeCard";
 const Recipes = () => {
   const chefsDetails = useLoaderData();
   //   console.log({chefsDetails});
@@ -13,12 +14,10 @@ const Recipes = () => {
     description,
     years_of_experience,
     likes,
+    recipes,
   } = chefsDetails;
-  //   console.log(chef_name);
-  //   style={{
-  //     backgroundColor: "rgba(227, 86, 64, 0.5)",
-  //     border: "none",
-  //   }}
+
+  console.log(recipes);
   return (
     <>
       <Container className="w-100" bg="primary">
@@ -42,7 +41,6 @@ const Recipes = () => {
                 src={chef_picture}
                 className="rounded-pill  p-4 bg-transparent w-75"
               />
-              <Card.Body></Card.Body>
             </Card>
           </Col>
           <Col>
@@ -74,9 +72,35 @@ const Recipes = () => {
             </Card.Body>
           </Col>
         </Row>
+        {/* recipes row */}
+        <Row
+          className="p-3 rounded mx-auto"
+          style={{
+            background: "#F7E6CD",
+          }}
+        >
+          <h1
+            className="fst-italic text-center mt-3 fw-semibold"
+            style={{color: "#e35640"}}
+          >
+            My Exclusive Recipes
+          </h1>
+          {recipes.map((r, index) => (
+            <RecipeCard key={index} recipe={r}></RecipeCard>
+          ))}
+        </Row>
       </Container>
     </>
   );
 };
 
 export default Recipes;
+// {r.recipe_image ? (
+//     <Card.Img
+//       variant="top"
+//       src={r.recipe_image}
+//       className="p-4 bg-transparent"
+//     />
+//   ) : (
+//     ""
+//   )}
