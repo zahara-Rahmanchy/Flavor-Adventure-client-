@@ -30,7 +30,11 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({params}) =>
-          fetch(`http://localhost:5000/chefs/${[params.id]}`),
+          fetch(
+            `https://flavor-adventure-server-side-m198b8wdx-zahara-rahmanchy.vercel.app/chefs/${[
+              params.id,
+            ]}`
+          ),
       },
       {
         path: "login",
