@@ -4,7 +4,8 @@ import {Container, Button, Form} from "react-bootstrap";
 import {AuthContext} from "../../Providers/AuthProvider";
 
 const Login = () => {
-  const {logIn, logInWithGoogle, user} = useContext(AuthContext);
+  const {logIn, logInWithGoogle, user, logInWithGithub} =
+    useContext(AuthContext);
   const [error, setError] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
@@ -44,6 +45,19 @@ const Login = () => {
       .then(result => {
         const loggedInUser = result.user;
 
+        // console.log(loggedInUser);
+
+        navigate(fromCurrentLocation, {replace: true});
+      })
+      .catch(error => {
+        console.log("error", error.message);
+      });
+  };
+  const handleGithubLogin = () => {
+    logInWithGithub()
+      .then(result => {
+        const loggedInUser = result.user;
+
         console.log(loggedInUser);
 
         navigate(fromCurrentLocation, {replace: true});
@@ -52,6 +66,7 @@ const Login = () => {
         console.log("error", error.message);
       });
   };
+
   return (
     <>
       <Container className="w-50 w-100 mx-auto my-4 p-3" fluid="md">
@@ -98,7 +113,7 @@ const Login = () => {
             </p>
           )}
 
-          <Button variant="danger" type="submit" className="mb-2 w-100">
+          <Button variant="danger" type="submit" className="mb-2 w-50">
             Login
           </Button>
           <br></br>
@@ -109,16 +124,20 @@ const Login = () => {
             </Link>
           </Form.Text>
         </Form>
-        <div className="mx-auto w-50 mt-2 ">
+        <div className="mx-auto w-50 mt-2 d-flex">
           <Button
             variant="primary"
-            className="my-1 w-100"
+            className="my-1 w-75"
             onClick={handleGoogleLogin}
           >
             Login with Google
           </Button>
           <br></br>
-          <Button variant="dark" className="my-1 w-100">
+          <Button
+            variant="dark"
+            className="my-1 w-75 ms-5"
+            onClick={handleGithubLogin}
+          >
             Login with GitHub
           </Button>
         </div>

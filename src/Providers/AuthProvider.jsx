@@ -7,6 +7,7 @@ import {
   GoogleAuthProvider,
   onAuthStateChanged,
   signOut,
+  GithubAuthProvider,
 } from "firebase/auth";
 import app from "../firebase/firebase.config";
 
@@ -16,6 +17,8 @@ const AuthProvider = ({children}) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const googleProvider = new GoogleAuthProvider();
+  const githubProvider = new GithubAuthProvider();
+
   const createUser = (email, password) => {
     setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
@@ -28,6 +31,11 @@ const AuthProvider = ({children}) => {
   //   google logIn
   const logInWithGoogle = () => {
     return signInWithPopup(auth, googleProvider);
+  };
+
+  // sign in with github
+  const logInWithGithub = () => {
+    return signInWithPopup(auth, githubProvider);
   };
   // signOut
   const logOut = () => {
@@ -53,6 +61,7 @@ const AuthProvider = ({children}) => {
     createUser,
     logIn,
     logInWithGoogle,
+    logInWithGithub,
     logOut,
   };
 
