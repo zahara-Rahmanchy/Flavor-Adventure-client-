@@ -5,6 +5,7 @@ import {Link} from "react-router-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 
 import "./Home.css";
+import HomeBanner from "./HomeBanner";
 const Home = () => {
   const [chefs, setChefs] = useState([]);
   const [spinner, setSpinner] = useState(false);
@@ -35,6 +36,7 @@ const Home = () => {
           </div>
         </div>
       )}
+      <HomeBanner />
       <Row>
         <Col sm={8}>
           <h4 className="text-center fst-italic">Our Chefs</h4>
@@ -81,7 +83,10 @@ const Home = () => {
             </Card>
           ))}
         </Col>
-        <Col sm={4}>sm=4</Col>
+        {/* first extra section: Special recipes of each chef */}
+        <Col md={4}>
+          <h5 className="text-center fst-italic">Our Chef's Special Dishes</h5>
+        </Col>
       </Row>
       ;
     </Container>
