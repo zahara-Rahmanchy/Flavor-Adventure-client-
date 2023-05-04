@@ -4,7 +4,7 @@ import {BsSearch, BsTwitter, BsLinkedin, BsFacebook} from "react-icons/bs";
 import {AiOutlineInstagram} from "react-icons/ai";
 const Footer = () => {
   return (
-    <div style={{background: " #F4EDED"}} className="m-0 p-0">
+    <div style={{background: " #F4EDED"}} className="mt-5 mx-0 pt-5 px-0">
       <Row className="m-0">
         <Col md={4} sm={12}>
           <div className="d-flex align-items-center  flex-column p-5 justify-content-between">
@@ -33,10 +33,11 @@ const Footer = () => {
         <Col md={4} className="p-md-5 px-5 py-2">
           <div className="px-5 ">
             <h5 className="text-black text-center">Need help?</h5>
-            <p className="text-secondary">Contact us via phone or email</p>
+            <p className="text-secondary text-center">
+              Contact us via phone or email
+            </p>
 
-            <p>
-              {" "}
+            <p className="text-center">
               <span
                 style={{color: "#e35640"}}
                 className="fw-semibold me-1 fs-4"
@@ -45,7 +46,7 @@ const Footer = () => {
               </span>{" "}
               +1 555 555 665
             </p>
-            <p>
+            <p className="text-center">
               <span
                 style={{color: "#e35640"}}
                 className="fw-semibold me-1 fs-4"

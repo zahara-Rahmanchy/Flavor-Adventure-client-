@@ -42,7 +42,7 @@ const RecipeCard = props => {
                 </td>
               ))}
             </tr>
-            <br />
+
             <tr>
               <th colSpan={3} className="bg-white">
                 Cooking Method
@@ -51,7 +51,7 @@ const RecipeCard = props => {
                 {cooking_method}
               </td>
             </tr>
-            <br />
+
             <tr>
               <th colSpan={3} className="bg-white">
                 Ratings

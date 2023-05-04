@@ -3,19 +3,20 @@ import {Container, Button, Form, Row, Col, Card} from "react-bootstrap";
 import {AiTwotoneLike} from "react-icons/ai";
 import {Link} from "react-router-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import {Carousel} from "react-responsive-carousel";
+
 import "./Home.css";
 const Home = () => {
   const [chefs, setChefs] = useState([]);
-
+  const [spinner, setSpinner] = useState(false);
   useEffect(() => {
+    setSpinner(true);
     fetch(
       "https://flavor-adventure-server-side-m198b8wdx-zahara-rahmanchy.vercel.app/chefs"
     )
       .then(res => res.json())
       .then(data => {
-        console.log(data);
         setChefs(data);
+        setSpinner(false);
       })
       .catch(error => {
         console.log(error);
@@ -24,6 +25,16 @@ const Home = () => {
 
   return (
     <Container>
+      {spinner && (
+        <div className="d-flex justify-content-center">
+          <div
+            className="spinner-border text-danger text-center mx-auto"
+            role="status"
+          >
+            <span className="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      )}
       <Row>
         <Col sm={8}>
           <h4 className="text-center fst-italic">Our Chefs</h4>

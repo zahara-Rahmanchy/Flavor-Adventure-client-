@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {Col, Container, Row, Image, Card, Table} from "react-bootstrap";
 import {useLoaderData} from "react-router-dom";
 import {AiTwotoneLike} from "react-icons/ai";
@@ -6,7 +6,8 @@ import "../../index.css";
 import RecipeCard from "./RecipeCard";
 const Recipes = () => {
   const chefsDetails = useLoaderData();
-  //   console.log({chefsDetails});
+
+  //   setSpi(false);
   const {
     chef_name,
     chef_picture,
@@ -95,12 +96,3 @@ const Recipes = () => {
 };
 
 export default Recipes;
-// {r.recipe_image ? (
-//     <Card.Img
-//       variant="top"
-//       src={r.recipe_image}
-//       className="p-4 bg-transparent"
-//     />
-//   ) : (
-//     ""
-//   )}

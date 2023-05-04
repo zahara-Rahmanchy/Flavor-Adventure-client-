@@ -12,6 +12,27 @@ import AuthProvider from "./Providers/AuthProvider";
 import Recipes from "./Components/Recipes/Recipes";
 import PrivateRoute from "./Providers/PrivateRoute";
 import ErrorPage from "./Components/ErrorPage";
+import {useState} from "react";
+import Spinner from "react-bootstrap/Spinner";
+
+// const loadChefs = async params => {
+//   const [loading, setLoading] = useState(false);
+
+//   try {
+//     setLoading(true); // set loading state to true
+//     const response = await fetch(
+//       `https://flavor-adventure-server-side-m198b8wdx-zahara-rahmanchy.vercel.app/chefs/${[
+//         params.id,
+//       ]}`
+//     );
+//     const data = await response.json();
+//     return data;
+//   } catch (error) {
+//     console.error(error);
+//   } finally {
+//     setLoading(false); // set loading state to false
+//   }
+// };
 const router = createBrowserRouter([
   {
     path: "/",
@@ -28,8 +49,12 @@ const router = createBrowserRouter([
           <PrivateRoute>
             <Recipes />
           </PrivateRoute>
+          // <PrivateRoute>
+          //   {loading ? <Spinner animation="border" /> : <Recipes />}
+          // </PrivateRoute>
         ),
-        loader: ({params}) =>
+        // loader: ({params}) => loadChefs(params),
+        loader: ({params, request}) =>
           fetch(
             `https://flavor-adventure-server-side-m198b8wdx-zahara-rahmanchy.vercel.app/chefs/${[
               params.id,
