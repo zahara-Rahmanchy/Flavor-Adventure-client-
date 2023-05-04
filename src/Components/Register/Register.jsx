@@ -6,7 +6,7 @@ import {AuthContext} from "../../Providers/AuthProvider";
 import {updateProfile} from "firebase/auth";
 
 const Register = () => {
-  const {user, createUser} = useContext(AuthContext);
+  const {user, createUser, logOut} = useContext(AuthContext);
   const navigate = useNavigate();
   const [error, setError] = useState("");
   const handleRegister = e => {
@@ -18,7 +18,7 @@ const Register = () => {
     const password = e.target.password.value;
     const conPassword = e.target.conPassword.value;
 
-    console.log(name, email, password, conPassword, photo);
+    // console.log(name, email, password, conPassword, photo);
 
     if (!/^[a-z 0-9]+@(gmail|yahoo).com$/.test(email)) {
       setError("Invalid Email");
@@ -40,6 +40,9 @@ const Register = () => {
 
         // alert("Registerd Successfully");
         update(createdUser, name, photo);
+        logOut()
+          .then(() => alert("Registered Successfully. Please Login!"))
+          .catch(error => setError(error.message));
         navigate("/login", {replace: true});
       })
       .catch(error => {
@@ -52,7 +55,7 @@ const Register = () => {
         displayName: name,
         photoURL: photo,
       })
-        .then(() => console.log("updated"))
+        .then(() => "")
         .catch(error => setError(error.message));
     };
   };

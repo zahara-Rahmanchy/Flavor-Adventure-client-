@@ -98,9 +98,12 @@ const Header = () => {
                 ) : (
                   <ActiveLink
                     to="/login"
-                    className="text-decoration-none ms-md-5  fs-6 fw-semibold text-black bg-transparent"
+                    className="text-decoration-none ms-md-5 fw-semibold text-black bg-transparent"
                   >
-                    <Button className="rounded-pill bg-danger border-0">
+                    <Button
+                      className="rounded-pill border-0"
+                      style={{background: "#5a5f70"}}
+                    >
                       Login
                     </Button>
                   </ActiveLink>

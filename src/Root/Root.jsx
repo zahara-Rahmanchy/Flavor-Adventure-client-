@@ -4,7 +4,7 @@ import Footer from "../Components/Shared/Footer/Footer";
 import Header from "../Components/Shared/Header/Header";
 const Root = () => {
   const navigation = useNavigation();
-  console.log(navigation.state);
+  // console.log(navigation.state);
   return (
     <div>
       <Header></Header>

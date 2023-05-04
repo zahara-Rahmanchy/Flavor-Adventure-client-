@@ -18,7 +18,7 @@ const Recipes = () => {
     recipes,
   } = chefsDetails;
 
-  console.log(recipes);
+  // console.log(recipes);
   return (
     <>
       <Container className="w-100" bg="primary">

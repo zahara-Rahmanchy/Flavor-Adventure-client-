@@ -9,7 +9,7 @@ const Login = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
-  console.log("login loc", location);
+  // console.log("login loc", location);
 
   const fromCurrentLocation = location.state?.from?.pathname || "/";
 
@@ -30,12 +30,12 @@ const Login = () => {
     // console.log(email, password);
     logIn(email, password)
       .then(userCredential => {
-        console.log(userCredential.user);
+        // console.log(userCredential.user);
 
         navigate(fromCurrentLocation, {replace: true});
       })
       .catch(error => {
-        console.log(error.message);
+        // console.log(error.message);
         setError(error.message);
       });
   };
@@ -50,7 +50,7 @@ const Login = () => {
         navigate(fromCurrentLocation, {replace: true});
       })
       .catch(error => {
-        console.log("error", error.message);
+        setError("error", error.message);
       });
   };
   const handleGithubLogin = () => {
@@ -58,12 +58,13 @@ const Login = () => {
       .then(result => {
         const loggedInUser = result.user;
 
-        console.log(loggedInUser);
+        // console.log(loggedInUser);
 
         navigate(fromCurrentLocation, {replace: true});
       })
       .catch(error => {
-        console.log("error", error.message);
+        setError(error.message);
+        // console.log("error", error.message);
       });
   };
 

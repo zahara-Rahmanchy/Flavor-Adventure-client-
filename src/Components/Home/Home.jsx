@@ -27,7 +27,8 @@ const Home = () => {
         setSpinner(false);
       })
       .catch(error => {
-        console.log(error);
+        error;
+        // console.log(error);
       });
   }, []);
 
