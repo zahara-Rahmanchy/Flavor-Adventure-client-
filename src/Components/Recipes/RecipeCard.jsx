@@ -93,14 +93,15 @@ const RecipeCard = props => {
         ;
       </Col>
       <Col sm={6}>
-        <Card className="bg-transparent border-0"></Card>
-        {recipe_image && (
-          <Card.Img
-            variant="top"
-            src={recipe_image}
-            className="p-4 bg-transparent"
-          />
-        )}
+        <Card className="bg-transparent border-0">
+          {recipe_image && (
+            <Card.Img
+              variant="top"
+              src={recipe_image}
+              className="p-4 bg-transparent"
+            />
+          )}
+        </Card>
       </Col>
     </>
   );

@@ -4,10 +4,14 @@ import {AiTwotoneLike} from "react-icons/ai";
 import {FaFeather} from "react-icons/fa";
 import {Link} from "react-router-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import LazyLoad from "react-lazy-load";
 
 import "./Home.css";
 import HomeBanner from "./HomeBanner";
 import {BsCloudHaze2} from "react-icons/bs";
+import {LazyLoadImage} from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
+
 const Home = () => {
   const [chefs, setChefs] = useState([]);
   const [spinner, setSpinner] = useState(false);
@@ -44,7 +48,17 @@ const Home = () => {
           <h4 className="text-center fst-italic mt-5 mb-3">Our Chefs</h4>
           {chefs.map(d => (
             <Card className="my-3 w-75 mx-auto rounded-4 p-3" key={d.chef_id}>
-              <img src={d.chef_picture} className="rounded-3 mb-3" />
+              {/* <LazyLoad>
+                <img src={d.chef_picture} className="rounded-3 mb-3" />
+              </LazyLoad> */}
+              <LazyLoadImage
+                alt={""}
+                effect="blur"
+                src={d.chef_picture}
+                width="100%"
+                heigh="100%"
+                placeholderSrc={<BsCloudHaze2></BsCloudHaze2>}
+              />
               <Card.Body
                 style={{backgroundColor: "#e8cccc"}}
                 className="rounded-1"
