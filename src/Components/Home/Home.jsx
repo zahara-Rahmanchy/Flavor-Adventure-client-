@@ -49,9 +49,6 @@ const Home = () => {
           <h4 className="text-center fst-italic mt-5 mb-3">Our Chefs</h4>
           {chefs.map(d => (
             <Card className="my-3 w-75 mx-auto rounded-4 p-3" key={d.chef_id}>
-              {/* <LazyLoad>
-                <img src={d.chef_picture} className="rounded-3 mb-3" />
-              </LazyLoad> */}
               <LazyLoadImage
                 alt={""}
                 effect="blur"
@@ -67,7 +64,7 @@ const Home = () => {
                 <Card.Title className="bg-transparent ">
                   {d.chef_name}
                 </Card.Title>
-                <Card.Text className="d-md-flex bg-transparent">
+                <div className="d-md-flex bg-transparent">
                   <p className="text-black fs-6 flex-md-grow-1 bg-transparent">
                     Years of Experience:
                     <span className="ps-2 text-danger bg-transparent">
@@ -80,7 +77,7 @@ const Home = () => {
                       {d.num_of_recipes} dishes{" "}
                     </span>
                   </p>
-                </Card.Text>
+                </div>
 
                 <div className="bg-transparent d-flex justify-content-md-between align-items-md-center flex-column-reverse flex-md-row">
                   <Link to={`/chefs/${d.chef_id}`}>
@@ -111,7 +108,7 @@ const Home = () => {
         <Col sm={2}>
           <Card>
             <Card.Body style={{backgroundColor: "#d8abab"}}>
-              <Card.Subtitle className="fst-italic text-white">
+              <Card.Subtitle className="fst-italic text-white text-center">
                 Tacos al Pastor
               </Card.Subtitle>
             </Card.Body>
@@ -139,7 +136,7 @@ const Home = () => {
         <Col sm={2}>
           <Card>
             <Card.Body style={{backgroundColor: "#d8abab"}}>
-              <Card.Subtitle className="fst-italic text-white">
+              <Card.Subtitle className="fst-italic text-white  text-center">
                 Thamles
               </Card.Subtitle>
             </Card.Body>
@@ -167,7 +164,7 @@ const Home = () => {
         <Col md={2}>
           <Card>
             <Card.Body style={{backgroundColor: "#d8abab"}}>
-              <Card.Subtitle className="fst-italic text-white">
+              <Card.Subtitle className="fst-italic text-white  text-center">
                 Tacos al Pastor
               </Card.Subtitle>
             </Card.Body>

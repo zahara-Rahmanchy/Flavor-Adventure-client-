@@ -14,9 +14,8 @@ const ErrorPAge = () => {
       ></img>
       <h2 className="text-8xl font-bold text-danger">
         <span className="sr-only">Error</span> {status || "Unknown"}
-        <p>{statusText || ""}</p>
       </h2>
-
+      <p>{statusText || ""}</p>
       <p className="font-bold fst-italic text-red-400 bg-dark p-2 rounded-1 text-info">
         {error?.message}
       </p>

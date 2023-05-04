@@ -55,9 +55,6 @@ const HomeBanner = () => {
             alt="..."
           />
           <div className="carousel-caption  d-md-block top-0">
-            {/* <h4 className="mt-5 display-md-5 display-6 fw-bold text-light">
-            Take a Journey Through Mexico's Diverse Culinary Landscape: From
-          </h4> */}
             <br />
             <br /> <br />
             <h4
@@ -94,7 +91,7 @@ const HomeBanner = () => {
         data-bs-slide="prev"
       >
         <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
+        <span className="visually-hidden">Previous</span>
       </button>
       <button
         className="carousel-control-next"

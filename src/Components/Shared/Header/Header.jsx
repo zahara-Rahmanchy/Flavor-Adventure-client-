@@ -9,7 +9,7 @@ import ActiveLink from "./ActiveLink";
 // import "../../../index.css";
 const Header = () => {
   const {user, logOut} = useContext(AuthContext);
-  console.log("header", user);
+
   const handleLogOut = () => {
     logOut()
       .then(() => alert("logged out!"))
