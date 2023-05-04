@@ -5,6 +5,7 @@ import {AuthContext} from "../../../Providers/AuthProvider";
 import "react-tooltip/dist/react-tooltip.css";
 
 import {Tooltip} from "react-tooltip";
+import ActiveLink from "./ActiveLink";
 // import "../../../index.css";
 const Header = () => {
   const {user, logOut} = useContext(AuthContext);
@@ -51,27 +52,27 @@ const Header = () => {
                 style={{maxHeight: "100px", backgroundColor: "#f4eded"}}
                 navbarScroll
               >
-                <Link
+                <ActiveLink
                   to="/"
                   className="text-decoration-none me-5 text-black fs-6 fw-semibold bg-transparent"
                 >
                   Home
-                </Link>
-                <Link
+                </ActiveLink>
+                <ActiveLink
                   to="/blog"
                   className="text-decoration-none m-0 fs-6 fw-semibold text-dark bg-transparent flex-grow-1"
                 >
                   Blog
-                </Link>
+                </ActiveLink>
 
                 {!user && (
                   <>
-                    <Link
+                    <ActiveLink
                       to="/register"
                       className="text-decoration-none ms-md-5 me-5 fs-6 fw-semibold text-black bg-transparent"
                     >
                       Register
-                    </Link>
+                    </ActiveLink>
                   </>
                 )}
               </Nav>
@@ -95,14 +96,14 @@ const Header = () => {
                     </Button>
                   </>
                 ) : (
-                  <Link
+                  <ActiveLink
                     to="/login"
                     className="text-decoration-none ms-md-5  fs-6 fw-semibold text-black bg-transparent"
                   >
                     <Button className="rounded-pill bg-danger border-0">
                       Login
                     </Button>
-                  </Link>
+                  </ActiveLink>
                 )}
               </div>
             </Navbar.Collapse>
